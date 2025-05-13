@@ -1,0 +1,118 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 45 100% 98%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 45 100% 98%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 45 100% 98%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 45 100% 50%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 45 30% 95%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 45 30% 95%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 45 30% 95%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 45 30% 90%;
+    --input: 45 10% 90%;
+    --ring: 45 100% 50%;
+
+    --radius: 0.5rem;
+
+    --font-sans: 'Poppins', sans-serif;
+    --font-arabic: 'Tajawal', 'Amiri', serif;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 45 100% 50%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 45 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    background-image: radial-gradient(circle at 100% 0%, rgba(255, 216, 0, 0.08) 0%, transparent 60%),
+                     radial-gradient(circle at 0% 100%, rgba(255, 216, 0, 0.08) 0%, transparent 40%);
+    background-attachment: fixed;
+  }
+
+  .rtl {
+    direction: rtl;
+    font-family: var(--font-arabic);
+  }
+
+  .ltr {
+    direction: ltr;
+  }
+  
+  ::selection {
+    @apply bg-ugem-yellow/30 text-foreground;
+  }
+}
+
+@layer utilities {
+  .fade-in {
+    @apply animate-fade-in;
+  }
+  
+  .yellow-gradient {
+    @apply bg-gradient-to-r from-ugem-yellow to-ugem-yellow-light text-black;
+  }
+  
+  .yellow-glow {
+    @apply shadow-[0_0_15px_rgba(255,216,0,0.3)];
+  }
+  
+  .hover-lift {
+    @apply transition-transform hover:-translate-y-1;
+  }
+}
